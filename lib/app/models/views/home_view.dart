@@ -40,9 +40,18 @@ class HomeView extends StatelessWidget {
                                 DropdownMenuItem(
                                   child: Text('Real'),
                                 ),
-                                //DropdownMenuItem(
-                                // child: Text('Dolar'),
-                                //),
+                                DropdownMenuItem(
+                                  value: 'Dolar',
+                                  child: Text('Dolar'),
+                                ),
+                                DropdownMenuItem(
+                                  value: 'Euro',
+                                  child: Text('Euro'),
+                                ),
+                                DropdownMenuItem(
+                                  value: 'Bitcoin',
+                                  child: Text('Bitcoin'),
+                                ),
                               ],
                               onChanged: (value) {}),
                         )),
