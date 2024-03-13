@@ -6,9 +6,11 @@ class CurrencyBox extends StatelessWidget {
       {super.key,
       required this.items,
       required this.controller,
-      required this.onChanged});
+      required this.onChanged,
+      required this.selectedItem});
 
   final List<CurrencyModel> items;
+  final CurrencyModel selectedItem;
   final TextEditingController controller;
   final void Function(CurrencyModel model) onChanged;
 
@@ -18,28 +20,29 @@ class CurrencyBox extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Expanded(
-            flex: 1,
-            child: SizedBox(
-              height: 56,
-              child: DropdownButton<CurrencyModel>(
-                  iconEnabledColor: const Color.fromARGB(255, 255, 7, 7),
-                  isExpanded: true,
-                  underline: Container(
-                    height: 1,
-                    color: Colors.amber,
-                  ),
-                  items: items
-                      .map((e) =>
-                          DropdownMenuItem(value: e, child: Text(e.name)))
-                      .toList(),
-                  onChanged: (value) {}),
-            )),
+          flex: 1,
+          child: SizedBox(
+            height: 56,
+            child: DropdownButton<CurrencyModel>(
+              iconEnabledColor: const Color.fromARGB(255, 255, 7, 7),
+              isExpanded: true,
+              underline: Container(
+                height: 1,
+                color: Colors.amber,
+              ),
+              items: items
+                  .map((e) => DropdownMenuItem(value: e, child: Text(e.name)))
+                  .toList(),
+              onChanged: onChanged,
+            ),
+          ),
+        ),
         const SizedBox(width: 10),
-        const Expanded(
+        Expanded(
           flex: 2,
           child: TextField(
             controller: controller,
-            decoration: InputDecoration(
+            decoration: const InputDecoration(
                 enabledBorder: UnderlineInputBorder(
                   borderSide: BorderSide(color: Colors.amber),
                 ),

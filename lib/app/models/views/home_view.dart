@@ -31,9 +31,19 @@ class HomeView extends StatelessWidget {
                 height: 200,
               ),
               const SizedBox(height: 30),
-              const CurrencyBox(),
+              CurrencyBox(
+                selectedItem: homeController.toCurrency,
+                controller: toText,
+                items: homeController.currencies,
+                onChanged: (model) {},
+              ),
               const SizedBox(height: 30),
-              const CurrencyBox(),
+              CurrencyBox(
+                selectedItem: homeController.fromCurrency,
+                controller: fromText,
+                items: homeController.currencies,
+                onChanged: (model) {},
+              ),
               const SizedBox(height: 50),
               ElevatedButton(
                 style: ElevatedButton.styleFrom(
