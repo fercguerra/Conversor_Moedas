@@ -1,9 +1,10 @@
 // ignore_for_file: prefer_const_literals_to_create_immutables, prefer_const_constructors
 
+import 'package:conversor_moedas/app/models/components/currency_box.dart';
 import 'package:flutter/material.dart';
 
 class HomeView extends StatelessWidget {
-  const HomeView({Key? key}) : super(key: key);
+  const HomeView({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -21,56 +22,10 @@ class HomeView extends StatelessWidget {
                 width: 200,
                 height: 200,
               ),
-              SizedBox(
-                width: MediaQuery.of(context).size.width,
-                child: Row(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Expanded(
-                        flex: 1,
-                        child: SizedBox(
-                          height: 56,
-                          child: DropdownButton(
-                              isExpanded: true,
-                              underline: Container(
-                                height: 1,
-                                color: Colors.amber,
-                              ),
-                              items: [
-                                DropdownMenuItem(
-                                  child: Text('Real'),
-                                ),
-                                DropdownMenuItem(
-                                  value: 'Dolar',
-                                  child: Text('Dolar'),
-                                ),
-                                DropdownMenuItem(
-                                  value: 'Euro',
-                                  child: Text('Euro'),
-                                ),
-                                DropdownMenuItem(
-                                  value: 'Bitcoin',
-                                  child: Text('Bitcoin'),
-                                ),
-                              ],
-                              onChanged: (value) {}),
-                        )),
-                    const SizedBox(width: 10),
-                    const Expanded(
-                      flex: 2,
-                      child: TextField(
-                        decoration: InputDecoration(
-                            enabledBorder: UnderlineInputBorder(
-                              borderSide: BorderSide(color: Colors.amber),
-                            ),
-                            focusedBorder: UnderlineInputBorder(
-                              borderSide: BorderSide(color: Colors.amber),
-                            )),
-                      ),
-                    ),
-                  ],
-                ),
-              ),
+              const SizedBox(height: 30),
+              CurrencyBox(),
+              const SizedBox(height: 30),
+              CurrencyBox(),
               const SizedBox(height: 50),
               ElevatedButton(
                 style: ElevatedButton.styleFrom(
