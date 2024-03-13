@@ -3,12 +3,14 @@ import 'package:flutter/widgets.dart';
 
 class HomeController {
   late List<CurrencyModel> currencies;
-  CurrencyModel toCurrency;
-  CurrencyModel fromCurrency;
+  late CurrencyModel toCurrency;
+  late CurrencyModel fromCurrency;
   final TextEditingController toText = TextEditingController();
   final TextEditingController fromText = TextEditingController();
 
-  HomeController() {
+  HomeController(
+      {required TextEditingController toText,
+      required TextEditingController fromText}) {
     currencies = CurrencyModel.getCurrencies();
     toCurrency = currencies[0];
     fromCurrency = currencies[1];

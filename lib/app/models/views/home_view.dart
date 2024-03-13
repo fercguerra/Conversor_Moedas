@@ -1,10 +1,18 @@
-// ignore_for_file: prefer_const_literals_to_create_immutables, prefer_const_constructors
+// ignore_for_file: must_be_immutable
 
+import 'package:conversor_moedas/app/controllers/home_controller.dart';
 import 'package:conversor_moedas/app/models/components/currency_box.dart';
 import 'package:flutter/material.dart';
 
 class HomeView extends StatelessWidget {
-  const HomeView({super.key});
+  final TextEditingController toText = TextEditingController();
+  final TextEditingController fromText = TextEditingController();
+
+  late HomeController homeController;
+
+  HomeView({super.key}) {
+    homeController = HomeController(toText: toText, fromText: fromText);
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -23,9 +31,9 @@ class HomeView extends StatelessWidget {
                 height: 200,
               ),
               const SizedBox(height: 30),
-              CurrencyBox(),
+              const CurrencyBox(),
               const SizedBox(height: 30),
-              CurrencyBox(),
+              const CurrencyBox(),
               const SizedBox(height: 50),
               ElevatedButton(
                 style: ElevatedButton.styleFrom(
