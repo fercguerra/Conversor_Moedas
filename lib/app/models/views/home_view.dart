@@ -5,6 +5,8 @@ import 'package:conversor_moedas/app/models/components/currency_box.dart';
 import 'package:flutter/material.dart';
 
 class HomeView extends StatefulWidget {
+  const HomeView({super.key});
+
   @override
   State<HomeView> createState() => _HomeViewState();
 }

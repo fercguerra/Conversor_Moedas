@@ -5,12 +5,10 @@ class HomeController {
   late List<CurrencyModel> currencies;
   late CurrencyModel toCurrency;
   late CurrencyModel fromCurrency;
-  final TextEditingController toText = TextEditingController();
-  final TextEditingController fromText = TextEditingController();
+  final TextEditingController toText;
+  final TextEditingController fromText;
 
-  HomeController(
-      {required TextEditingController toText,
-      required TextEditingController fromText}) {
+  HomeController({required this.toText, required this.fromText}) {
     currencies = CurrencyModel.getCurrencies();
     toCurrency = currencies[0];
     fromCurrency = currencies[1];
