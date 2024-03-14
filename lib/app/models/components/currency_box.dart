@@ -26,6 +26,7 @@ class CurrencyBox extends StatelessWidget {
             child: DropdownButton<CurrencyModel>(
               iconEnabledColor: const Color.fromARGB(255, 255, 7, 7),
               isExpanded: true,
+              value: selectedItem,
               underline: Container(
                 height: 1,
                 color: Colors.amber,
@@ -33,7 +34,11 @@ class CurrencyBox extends StatelessWidget {
               items: items
                   .map((e) => DropdownMenuItem(value: e, child: Text(e.name)))
                   .toList(),
-              onChanged: onChanged,
+              onChanged: (CurrencyModel? model) {
+                if (model != null) {
+                  onChanged(model);
+                }
+              },
             ),
           ),
         ),
