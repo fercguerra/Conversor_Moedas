@@ -34,8 +34,8 @@ class _HomeViewState extends State<HomeView> {
               const EdgeInsets.only(top: 100, left: 20, right: 20, bottom: 20),
           child: Column(
             children: [
-              Image.network(
-                'https://thumbs.dreamstime.com/z/%C3%ADcone-de-troca-moeda-isom%C3%A9trica-c%C3%A2mbio-em-dinheiro-do-d%C3%B3lar-para-shekel-moedas-ouro-com-setas-circundantes-s%C3%ADmbolo-d-sinal-273169736.jpg?w=768',
+              Image.asset('/images/logo.png',
+                
                 width: 200,
                 height: 200,
               ),
